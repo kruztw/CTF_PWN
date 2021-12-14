@@ -1,0 +1,32 @@
+1. 呼叫慣例
+pc => rip
+sp => rsp
+r0 ~ r3 => 傳遞參數
+r0 => 回傳值
+
+
+2. thumb mode & arm mode
+若 buffer overflow 後發現跳到的位址與原指令不同, 則可能是進入 thumb mode
+thumb mode 位址 = arm mode 位址 + 1
+ex:
+見 rop
+
+
+3. gdb
+目前測試只能用 Pwndbg
+p = process(['qemu-arm', '-L', './', '-g', '1234', './pwn3']) # 會掛載在 port 1234, 且自動停住
+
+$ gdb-multiarch
+pwndbg> set architecture arm
+pwndbg> target remote:1234
+
+
+-------------------------------------------------------------------------------------------------------------
+
+static link
+
+1. 獲取 /bin/sh 位址
+ROPgadget --binary ./pwn3 --string /bin/sh
+pop {r0, r4, pc}
+每次 return 的位址都要自己寫
+

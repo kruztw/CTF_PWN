@@ -1,0 +1,10 @@
+# 測試環境 : libc2-31
+
+## 條件: 可以任意從 tcache malloc 且 size 很小時 (0x18)   (condition1)
+
+malloc stdin->_IO_write_ptr (stdin+0x28) 並改寫 _IO_buf_base 成 heap_base, 透過輸入就能重複改寫 tcache
+
+坑:
+在 tcache_get 會將 e->key 設成 0 即 chunk 的 bk, 因此如果拿 stdin+0x30 會將 stdin+0x38 (_IO_buf_base) 寫成 0 造成寫的時候重新 malloc(0x1000)
+如果 unsorted bin 還活著那還行, 但如果壞了 (因為 exploit 需求) 這裡會出錯
+同樣的, 如果拿 stdin+0x38 會將 stdin+0x40 (_IO_buf_end) 寫成 0 造成讀的時候 size 過大 (0-_IO_buf_base) 導致失敗

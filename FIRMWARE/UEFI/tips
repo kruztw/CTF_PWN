@@ -1,0 +1,52 @@
+# EXTRACT OVMF.fd
+
+法一 :
+
+下載 UEFIExtract 
+[網址](https://github.com/LongSoft/UEFITool/releases)
+
+./UEFIExtract OVMF.fd
+
+法二 :
+安裝: pip3 install uefi-firmware-parser
+uefi-firmware-parser ./OVMF.fd -e
+
+法三 :
+
+binwalk OVMF.fd 把 LZMA dd 出來
+dd if=OVMF.fd of=output.lzma skip= bs=1 count= 
+unlzma output.lzma
+binwalk output
+
+注意:
+count 太大 : compressed data is corrupt
+count 太小 : unexpected end of input
+
+count 無法透過 binwalk 得知, 只能慢慢 try
+[參考](https://superuser.com/questions/1448005/using-dd-command-to-extract-lzma-file-from-within-firmware-binary)
+
+
+# 執行
+
+通常 run.sh 會進到 shell (跟一般開機一樣), 因此開機時要按 F12 進到 UEFI 界面
+並且會跑出目前執行的檔案名稱 e.g. loading Boot0000 UiApp
+
+
+# 找尋 UiApp
+
+find . | grep UiApp
+
+# 通常該目錄下會包含
+0 PE32 image section
+1 Raw Section
+...
+
+以 pwn2win 的 access the truth 來說, 要看的檔案為 0 PE32 image section/body.bin
+
+確認方式: vim body.bin , %!xxd , 因為 bios 出現 Enter Password, 透過搜尋 P.a. (UTF-16) 找到 Enter Password
+
+
+# 找尋執行位址
+
+有時後 UiApp 被 strip 掉, 完全看不懂, 這時只能用 PwnDBG 找相關字串, 然後用 search 找尋位址 (會有很多個, 但最後 3 個 hex 相同的只有一個), 然後再用相對位址找到 P.a. 的位址)
+接著用 awatch 定位

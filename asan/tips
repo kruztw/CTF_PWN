@@ -1,0 +1,56 @@
+https://bestwing.me/ASan-and-ASan-in-CTF(0ctf-babyaegis).html
+
+檢查:
+Heap-use-after-free
+Heap-buffer-overflow
+Stack-buffer-overflow
+Global-buffer-overflow
+
+overflow:
+
+Shadow_addr = (Mem_addr >> 3) + offset。
+
+64位
+Shadow = (Mem >> 3) + 0x7fff8000;
+
+32位
+Shadow = (Mem >> 3) + 0x20000000;
+
+每 8 bytes 對應一個 shadow memory 的 byte 
+該 byte 會存一個數字 k (0~7 or 負數) 代表前 k bytes 能寫 (0 代表全可寫, 負的表示不可寫 (不同負值代表不同錯誤訊息))
+
+
+被偵測後噴錯 :
+
+SUMMARY: AddressSanitizer: stack-buffer-overflow (/home/oem/Downloads/VulnTest+0x7943) 
+Shadow bytes around the buggy address:
+  0x10005eab80b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x10005eab80c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x10005eab80d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x10005eab80e0: 00 00 00 00 00 00 00 00 00 00 f1 f1 f1 f1 01 f2
+  0x10005eab80f0: f2 f2 00 00 00 00 00 00 00 00 00 00 00 00 f1 f1
+=>0x10005eab8100: f1 f1 00 00 00 00 00[06]f2 f2 f2 f2 f2 f2 00 00
+  0x10005eab8110: 00 00 00 00 f2 f2 f2 f2 f2 f2 00 00 00 00 00 00
+  0x10005eab8120: 00 00 00 00 00 00 00 00 00 00 f3 f3 f3 f3 00 00
+  0x10005eab8130: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x10005eab8140: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x10005eab8150: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb

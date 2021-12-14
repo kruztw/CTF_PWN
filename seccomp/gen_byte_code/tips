@@ -1,0 +1,4 @@
+1. 在 rules.asm 寫入規則
+2. ./gen.sh
+3. 將規則複製到 dump.c 的 filter 並調整指令數量 (每個指令 8 bytes)
+4. ./dump

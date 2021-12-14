@@ -1,0 +1,27 @@
+diff --git a/jsstring.c b/jsstring.c
+index 9271b81..8c882c6 100644
+--- a/jsstring.c
++++ b/jsstring.c
+@@ -278,6 +278,14 @@ static void Sp_toUpperCase(js_State *J)
+ 	js_free(J, dst);
+ }
+ 
++static void Sp_edit(js_State *J)
++{
++	char *src = checkstring(J, 0);
++	int  post = js_tointeger(J, 1);
++	char val  = js_touint16(J, 2);
++	src[post] = val;
++}
++
+ static int istrim(int c)
+ {
+ 	return c == 0x9 || c == 0xB || c == 0xC || c == 0x20 || c == 0xA0 || c == 0xFEFF ||
+@@ -699,6 +707,7 @@ void jsB_initstring(js_State *J)
+ 		jsB_propf(J, "String.prototype.toLocaleLowerCase", Sp_toLowerCase, 0);
+ 		jsB_propf(J, "String.prototype.toUpperCase", Sp_toUpperCase, 0);
+ 		jsB_propf(J, "String.prototype.toLocaleUpperCase", Sp_toUpperCase, 0);
++		jsB_propf(J, "String.prototype.edit", Sp_edit, 1);
+ 
+ 		/* ES5 */
+ 		jsB_propf(J, "String.prototype.trim", Sp_trim, 0);

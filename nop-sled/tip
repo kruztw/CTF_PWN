@@ -1,0 +1,14 @@
+想法：
+
+stk 為 query_position 的區域變數，且離 buffer 宣告位置不遠, 因此 stk 的位址會在 buffer 附近
+但 offset 會使回傳的位址有所變化，導致我們無法直接在正確的位址塞入 shellcode
+儘管如此 buffer 的空間足足有 0x1000 ，因此只要利用 nop sled 就能導到 sheelcode 的位址
+
+
+結論:
+
+nop sled 使用時機
+
+寫入空間很大且不確定執行位址時
+
+
